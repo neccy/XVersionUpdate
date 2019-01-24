@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">VersionUpdateDemo</string>
+    <string name="app_name">VersionUpdate</string>
     <string name="notification_title">downloading...</string>
     <string name="notification_pagesize">Size:</string>
     <string name="notification_speed">Speed:</string>

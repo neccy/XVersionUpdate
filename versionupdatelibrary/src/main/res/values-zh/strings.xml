@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">VersionUpdateDemo</string>
+    <string name="app_name">VersionUpdate</string>
     <string name="notification_title">正在下载...</string>
     <string name="notification_pagesize">总体积:</string>
     <string name="notification_speed">下载速度:</string>

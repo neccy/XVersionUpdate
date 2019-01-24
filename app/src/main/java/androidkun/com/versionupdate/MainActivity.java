@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity{
                 .setNewVersion("1.50")//设置即将下载的APK的版本号
                 .setNotificationIconRes(R.mipmap.app_icon)//设置通知大图标
                 .setNotificationSmallIconRes(R.mipmap.app_icon_small)//设置通知小图标
-                .setNotificationTitle("版本升级Demo")//设置通知标题
+                .setNotificationTitle(getResources().getString(R.string.app_name))//设置通知标题
                 .startDownLoad();//开始下载
     }
 }
