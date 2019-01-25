@@ -41,6 +41,6 @@ publish {
     artifactId = 'xversionupdate'
     publishVersion = '1.0.5'
     desc = 'A quick update version of the framework for Android.'
-    website = 'https://github.com/AndroidKun/XVersionUpdate'
+    website = 'https://github.com/neccy/XVersionUpdate'
 }
 
