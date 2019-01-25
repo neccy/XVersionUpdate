@@ -1,5 +1,4 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.novoda.bintray-release'//添加
 
 android {
     compileSdkVersion 28
@@ -32,14 +31,5 @@ dependencies {
     })
     implementation 'com.android.support:appcompat-v7:24.2.1'
     testImplementation 'junit:junit:4.12'
-}
-
-publish {
-    userOrg = 'androidkun'
-    groupId = 'com.androidkun'
-    artifactId = 'xversionupdate'
-    publishVersion = '1.0.5'
-    desc = 'A quick update version of the framework for Android.'
-    website = 'https://github.com/neccy/XVersionUpdate'
 }
 
