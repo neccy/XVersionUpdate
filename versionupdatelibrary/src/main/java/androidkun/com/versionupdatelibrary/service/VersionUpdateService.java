@@ -313,8 +313,8 @@ public class VersionUpdateService extends Service {
         // 调用系统自带安装环境
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             // 由于没有在Activity环境下启动Activity,设置下面的标签
-            install.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            install.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+            install.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            install.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
             Uri contentUri = FileProvider.getUriForFile(this, getPackageName() + ".fileprovider", file);
             install.setDataAndType(contentUri, "application/vnd.android.package-archive");
         } else {
