@@ -312,6 +312,7 @@ public class VersionUpdateService extends Service {
             install.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
             Uri contentUri = FileProvider.getUriForFile(this, getPackageName() + ".fileprovider", file);
             install.setDataAndType(contentUri, "application/vnd.android.package-archive");
+            install.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         } else {
             install.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             install.setDataAndType(Uri.fromFile(file), "application/vnd.android.package-archive");
