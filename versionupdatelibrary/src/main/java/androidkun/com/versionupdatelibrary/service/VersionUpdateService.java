@@ -316,7 +316,7 @@ public class VersionUpdateService extends Service {
             install.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             install.setDataAndType(Uri.fromFile(file), "application/vnd.android.package-archive");
         }
-        getApplicationContext().startActivity(install);
+        startActivity(install);
         collapseStatusBar();
     }
 
