@@ -88,7 +88,7 @@ public class VersionUpdateService extends Service {
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         if (intent == null) return Service.START_STICKY_COMPATIBILITY;
-        if (intent.getAction().equals(ACTION_START)) {
+        if (intent.getAction() != null && intent.getAction().equals(ACTION_START)) {
             isDownLoading = true;
             FileBean fileBean = (FileBean) intent.getSerializableExtra("FileBean");
             curFileBean = fileBean;
@@ -100,7 +100,7 @@ public class VersionUpdateService extends Service {
                 }
             }
             executorService.execute(new InitThread(getBaseContext(), fileBean));
-        } else if (intent.getAction().equals(ACTION_PAUSE)) {
+        } else if (intent.getAction() != null && intent.getAction().equals(ACTION_PAUSE)) {
             FileBean fileBean = (FileBean) intent.getSerializableExtra("FileBean");
             DownloadTask pauseTask = null;
             for (DownloadTask downloadTask : downloadTasks) {
@@ -202,7 +202,9 @@ public class VersionUpdateService extends Service {
     private class DownLoadBroadcastReceiver extends BroadcastReceiver {
         @Override
         public void onReceive(Context context, Intent intent) {
+            if (intent == null) return;
             String action = intent.getAction();
+            if (action == null) return;
             if (action.equals(Config.ACTION_START)) {
                 isDownLoading = true;
                 FileBean fileBean = (FileBean) intent.getSerializableExtra("FileBean");
